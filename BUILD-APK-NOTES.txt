@@ -1,0 +1,17 @@
+APK BUILD STATUS
+----------------
+This ZIP contains Android source code and a GitHub Actions workflow for cloud APK building.
+It does NOT contain a compiled APK yet.
+
+Phone-only build route (Samsung):
+1. Create/sign in to a GitHub account in Chrome.
+2. Create a new repository named ShriKrishnaEnterprise.
+3. Upload the contents of this project folder (not the outer ZIP) to the repository root.
+4. Open the repository's Actions tab.
+5. Select "Build Shri Krishna Enterprise APK" and tap "Run workflow".
+6. Wait for the workflow to finish successfully.
+7. Open the completed workflow run, scroll to Artifacts, and download
+   Shri-Krishna-Enterprise-debug-APK. Extract it and install app-debug.apk.
+
+If the workflow fails, open the failed run and share the first red error text.
+This source is an MVP, not certified GST/accounting software. Review README.md before real use.
