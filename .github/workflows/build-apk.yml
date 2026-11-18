@@ -1,4 +1,5 @@
- 
+
+
 name: Build Shri Krishna Enterprise APK
 
 on:
@@ -20,11 +21,10 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Install Android SDK packages
+        run: |
+          yes | sdkmanager --licenses
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -42,4 +42,3 @@ jobs:
         with:
           name: Shri-Krishna-Enterprise-debug-APK
           path: ShriKrishnaEnterprise/app/build/outputs/apk/debug/app-debug.apk
-
