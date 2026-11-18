@@ -24,13 +24,13 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      
       - name: Configure Android SDK
         run: |
-          SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | sort -V | tail -n 1)
-          echo "Using $SDKMANAGER"
-          chmod +x "$SDKMANAGER"
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
           yes | "$SDKMANAGER" --licenses || true
           "$SDKMANAGER" "platforms;android-35" "build-tools;35.0.0"
+
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
